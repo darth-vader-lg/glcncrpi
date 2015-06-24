@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cd axis
+make $1 $2 || exit
+cd ..
+

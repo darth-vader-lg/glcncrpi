@@ -269,3 +269,12 @@ sample/17-fractal/mandelbrot.h
 sample/18-ntptime/kernel.cpp
 sample/18-ntptime/kernel.h
 sample/18-ntptime/main.cpp
+cnc/axis/cmulticoreledtest.cpp
+cnc/axis/cmulticoreledtest.h
+cnc/axis/encoder.cpp
+cnc/axis/encoder.h
+cnc/axis/kernel.cpp
+cnc/axis/kernel.h
+cnc/axis/kernel-multicore.cpp
+cnc/axis/kernel-multicore.h
+cnc/axis/main.cpp

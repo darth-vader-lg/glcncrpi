@@ -31,3 +31,8 @@ cd sample
 #./makelatest $1 $2 || exit
 ./makeall $1 $2 || exit
 cd ..
+
+cd cnc
+./makeall $1 $2 || exit
+cd ..
+
