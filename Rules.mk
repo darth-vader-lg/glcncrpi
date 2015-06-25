@@ -26,6 +26,7 @@ endif
 
 RASPPI	?= 1
 PREFIX	?= arm-linux-gnueabihf-
+REMOVE   ?= rm -f
 
 CC	= $(PREFIX)gcc
 CPP	= $(PREFIX)g++
@@ -54,4 +55,4 @@ CPPFLAGS+= $(CFLAGS) -fno-exceptions -fno-rtti -std=c++0x
 	$(CPP) $(CPPFLAGS) -c -o $@ $<
 
 clean:
-	rm -f *.o *.a *.elf *.lst *.img *.cir *.map *~ $(EXTRACLEAN)
+	$(REMOVE) *.o *.a *.elf *.lst *.img *.cir *.map *~ $(EXTRACLEAN)

@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libcircle", "lib\libcircle.vcxproj", "{C74F1928-A471-467A-9F88-AA3B6FFC3A71}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "axis", "cnc\axis\axis.vcxproj", "{71C80C25-7F2B-47A5-A11F-D82F56B3E268}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C9C6F55B-E434-4D27-ADCB-2B04F1F19659}"
+	ProjectSection(SolutionItems) = preProject
+		Config.mk = Config.mk
+		Rules.mk = Rules.mk
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C74F1928-A471-467A-9F88-AA3B6FFC3A71}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C74F1928-A471-467A-9F88-AA3B6FFC3A71}.Debug|Win32.Build.0 = Debug|Win32
+		{C74F1928-A471-467A-9F88-AA3B6FFC3A71}.Release|Win32.ActiveCfg = Release|Win32
+		{C74F1928-A471-467A-9F88-AA3B6FFC3A71}.Release|Win32.Build.0 = Release|Win32
+		{71C80C25-7F2B-47A5-A11F-D82F56B3E268}.Debug|Win32.ActiveCfg = Debug|Win32
+		{71C80C25-7F2B-47A5-A11F-D82F56B3E268}.Debug|Win32.Build.0 = Debug|Win32
+		{71C80C25-7F2B-47A5-A11F-D82F56B3E268}.Release|Win32.ActiveCfg = Release|Win32
+		{71C80C25-7F2B-47A5-A11F-D82F56B3E268}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

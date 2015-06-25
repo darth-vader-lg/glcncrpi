@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="delayloop.S" />
+    <None Include="exceptionstub.S" />
+    <None Include="libstub.S" />
+    <None Include="Makefile" />
+    <None Include="startup.S" />
+    <None Include="util_fast.S" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\assert.h" />
+    <ClInclude Include="..\include\circle\actled.h" />
+    <ClInclude Include="..\include\circle\alloc.h" />
+    <ClInclude Include="..\include\circle\armv6mmu.h" />
+    <ClInclude Include="..\include\circle\bcm2835.h" />
+    <ClInclude Include="..\include\circle\bcm2835int.h" />
+    <ClInclude Include="..\include\circle\bcm2836.h" />
+    <ClInclude Include="..\include\circle\bcmframebuffer.h" />
+    <ClInclude Include="..\include\circle\bcmmailbox.h" />
+    <ClInclude Include="..\include\circle\bcmpropertytags.h" />
+    <ClInclude Include="..\include\circle\chargenerator.h" />
+    <ClInclude Include="..\include\circle\debug.h" />
+    <ClInclude Include="..\include\circle\device.h" />
+    <ClInclude Include="..\include\circle\devicenameservice.h" />
+    <ClInclude Include="..\include\circle\dmachannel.h" />
+    <ClInclude Include="..\include\circle\exception.h" />
+    <ClInclude Include="..\include\circle\exceptionhandler.h" />
+    <ClInclude Include="..\include\circle\exceptionstub.h" />
+    <ClInclude Include="..\include\circle\gpioclock.h" />
+    <ClInclude Include="..\include\circle\gpiomanager.h" />
+    <ClInclude Include="..\include\circle\gpiopin.h" />
+    <ClInclude Include="..\include\circle\i2cmaster.h" />
+    <ClInclude Include="..\include\circle\i2cslave.h" />
+    <ClInclude Include="..\include\circle\interrupt.h" />
+    <ClInclude Include="..\include\circle\koptions.h" />
+    <ClInclude Include="..\include\circle\logger.h" />
+    <ClInclude Include="..\include\circle\macros.h" />
+    <ClInclude Include="..\include\circle\memio.h" />
+    <ClInclude Include="..\include\circle\memory.h" />
+    <ClInclude Include="..\include\circle\multicore.h" />
+    <ClInclude Include="..\include\circle\pagetable.h" />
+    <ClInclude Include="..\include\circle\pwmoutput.h" />
+    <ClInclude Include="..\include\circle\pwmsounddevice.h" />
+    <ClInclude Include="..\include\circle\screen.h" />
+    <ClInclude Include="..\include\circle\serial.h" />
+    <ClInclude Include="..\include\circle\spinlock.h" />
+    <ClInclude Include="..\include\circle\startup.h" />
+    <ClInclude Include="..\include\circle\stdarg.h" />
+    <ClInclude Include="..\include\circle\string.h" />
+    <ClInclude Include="..\include\circle\synchronize.h" />
+    <ClInclude Include="..\include\circle\sysconfig.h" />
+    <ClInclude Include="..\include\circle\timer.h" />
+    <ClInclude Include="..\include\circle\tracer.h" />
+    <ClInclude Include="..\include\circle\types.h" />
+    <ClInclude Include="..\include\circle\util.h" />
+    <ClInclude Include="font.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="actled.cpp" />
+    <ClCompile Include="alloc.cpp" />
+    <ClCompile Include="assert.cpp" />
+    <ClCompile Include="bcmframebuffer.cpp" />
+    <ClCompile Include="bcmmailbox.cpp" />
+    <ClCompile Include="bcmpropertytags.cpp" />
+    <ClCompile Include="chargenerator.cpp" />
+    <ClCompile Include="debug.cpp" />
+    <ClCompile Include="device.cpp" />
+    <ClCompile Include="devicenameservice.cpp" />
+    <ClCompile Include="dmachannel.cpp" />
+    <ClCompile Include="exceptionhandler.cpp" />
+    <ClCompile Include="gpioclock.cpp" />
+    <ClCompile Include="gpiomanager.cpp" />
+    <ClCompile Include="gpiopin.cpp" />
+    <ClCompile Include="i2cmaster.cpp" />
+    <ClCompile Include="i2cslave.cpp" />
+    <ClCompile Include="interrupt.cpp" />
+    <ClCompile Include="koptions.cpp" />
+    <ClCompile Include="libhelper.cpp" />
+    <ClCompile Include="logger.cpp" />
+    <ClCompile Include="memio.cpp" />
+    <ClCompile Include="memory.cpp" />
+    <ClCompile Include="multicore.cpp" />
+    <ClCompile Include="new.cpp" />
+    <ClCompile Include="pagetable.cpp" />
+    <ClCompile Include="purecall.cpp" />
+    <ClCompile Include="pwmoutput.cpp" />
+    <ClCompile Include="pwmsounddevice.cpp" />
+    <ClCompile Include="screen.cpp" />
+    <ClCompile Include="serial.cpp" />
+    <ClCompile Include="spinlock.cpp" />
+    <ClCompile Include="string.cpp" />
+    <ClCompile Include="synchronize.cpp" />
+    <ClCompile Include="sysinit.cpp" />
+    <ClCompile Include="timer.cpp" />
+    <ClCompile Include="tracer.cpp" />
+    <ClCompile Include="util.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C74F1928-A471-467A-9F88-AA3B6FFC3A71}</ProjectGuid>
+    <Keyword>MakeFileProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="vsbuild.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="vsbuild.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <NMakeOutput>libcircle.a</NMakeOutput>
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <NMakeOutput>libcircle.a</NMakeOutput>
+    <NMakePreprocessorDefinitions>WIN32;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
