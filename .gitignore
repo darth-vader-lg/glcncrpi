@@ -16,3 +16,4 @@ bare-metal.lst
 /lib/input/libinput.a
 /lib/net/libnet.a
 /lib/usb/libusb.a
+/*.opensdf
