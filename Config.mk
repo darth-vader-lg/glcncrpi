@@ -1,6 +1,6 @@
 RASPPI ?= 2
 ifeq ($(OS),Windows_NT)
-   PATH=$(CIRCLEHOME)/tools/arm-bcm2708/gcc-linaro-arm-none-eabi-4.8-2014.04/bin
+   PATH=$(CIRCLEHOME)/tools;$(CIRCLEHOME)/tools/arm-bcm2708/gcc-linaro-arm-none-eabi-4.8-2014.04/bin;PATH
    PREFIX ?= arm-none-eabi-
    REMOVE ?= del
 else

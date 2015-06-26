@@ -3,13 +3,13 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <NMakeBuildCommandLine>make</NMakeBuildCommandLine>
+    <NMakeBuildCommandLine>$(SolutionDir)tools\make</NMakeBuildCommandLine>
   </PropertyGroup>
   <PropertyGroup>
-    <NMakeReBuildCommandLine>make -b</NMakeReBuildCommandLine>
+    <NMakeReBuildCommandLine>$(SolutionDir)tools\make -b</NMakeReBuildCommandLine>
   </PropertyGroup>
   <PropertyGroup>
-    <NMakeCleanCommandLine>make clean</NMakeCleanCommandLine>
+    <NMakeCleanCommandLine>$(SolutionDir)tools\make clean</NMakeCleanCommandLine>
     <NMakeIncludeSearchPath>$(SolutionDir)\include;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
     <ExecutablePath>$(SolutionDir)tools;$(ExecutablePath)</ExecutablePath>
   </PropertyGroup>
