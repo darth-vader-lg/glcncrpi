@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{FBD6F5CC-AE16-4D2A-8B55-842FDE3A4FC1}</ProjectGuid>
+    <Keyword>MakeFileProj</Keyword>
+    <ProjectName>libusb</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\vsbuild.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\vsbuild.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <NMakeOutput>libusb.a</NMakeOutput>
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <NMakeOutput>libusb.a</NMakeOutput>
+    <NMakePreprocessorDefinitions>WIN32;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="Makefile" />
+    <None Include="readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dwhcidevice.cpp" />
+    <ClCompile Include="dwhciframeschednper.cpp" />
+    <ClCompile Include="dwhciframeschednsplit.cpp" />
+    <ClCompile Include="dwhciframeschedper.cpp" />
+    <ClCompile Include="dwhciregister.cpp" />
+    <ClCompile Include="dwhcirootport.cpp" />
+    <ClCompile Include="dwhcixferstagedata.cpp" />
+    <ClCompile Include="macaddress.cpp" />
+    <ClCompile Include="netdevice.cpp" />
+    <ClCompile Include="smsc951x.cpp" />
+    <ClCompile Include="usbconfigparser.cpp" />
+    <ClCompile Include="usbdevice.cpp" />
+    <ClCompile Include="usbdevicefactory.cpp" />
+    <ClCompile Include="usbendpoint.cpp" />
+    <ClCompile Include="usbfunction.cpp" />
+    <ClCompile Include="usbhiddevice.cpp" />
+    <ClCompile Include="usbhostcontroller.cpp" />
+    <ClCompile Include="usbkeyboard.cpp" />
+    <ClCompile Include="usbmassdevice.cpp" />
+    <ClCompile Include="usbmouse.cpp" />
+    <ClCompile Include="usbprinter.cpp" />
+    <ClCompile Include="usbrequest.cpp" />
+    <ClCompile Include="usbstandardhub.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\circle\usb\dwhci.h" />
+    <ClInclude Include="..\..\include\circle\usb\dwhcidevice.h" />
+    <ClInclude Include="..\..\include\circle\usb\dwhciframeschednper.h" />
+    <ClInclude Include="..\..\include\circle\usb\dwhciframeschednsplit.h" />
+    <ClInclude Include="..\..\include\circle\usb\dwhciframeschedper.h" />
+    <ClInclude Include="..\..\include\circle\usb\dwhciframescheduler.h" />
+    <ClInclude Include="..\..\include\circle\usb\dwhciregister.h" />
+    <ClInclude Include="..\..\include\circle\usb\dwhcirootport.h" />
+    <ClInclude Include="..\..\include\circle\usb\dwhcixferstagedata.h" />
+    <ClInclude Include="..\..\include\circle\usb\macaddress.h" />
+    <ClInclude Include="..\..\include\circle\usb\netdevice.h" />
+    <ClInclude Include="..\..\include\circle\usb\smsc951x.h" />
+    <ClInclude Include="..\..\include\circle\usb\usb.h" />
+    <ClInclude Include="..\..\include\circle\usb\usbconfigparser.h" />
+    <ClInclude Include="..\..\include\circle\usb\usbdevice.h" />
+    <ClInclude Include="..\..\include\circle\usb\usbdevicefactory.h" />
+    <ClInclude Include="..\..\include\circle\usb\usbendpoint.h" />
+    <ClInclude Include="..\..\include\circle\usb\usbfunction.h" />
+    <ClInclude Include="..\..\include\circle\usb\usbhid.h" />
+    <ClInclude Include="..\..\include\circle\usb\usbhiddevice.h" />
+    <ClInclude Include="..\..\include\circle\usb\usbhostcontroller.h" />
+    <ClInclude Include="..\..\include\circle\usb\usbhub.h" />
+    <ClInclude Include="..\..\include\circle\usb\usbkeyboard.h" />
+    <ClInclude Include="..\..\include\circle\usb\usbmassdevice.h" />
+    <ClInclude Include="..\..\include\circle\usb\usbmouse.h" />
+    <ClInclude Include="..\..\include\circle\usb\usbprinter.h" />
+    <ClInclude Include="..\..\include\circle\usb\usbrequest.h" />
+    <ClInclude Include="..\..\include\circle\usb\usbstandardhub.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

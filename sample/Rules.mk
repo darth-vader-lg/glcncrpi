@@ -26,7 +26,7 @@ ifeq ($(strip $(CIRCLEHOME)),)
 CIRCLEHOME = ../..
 endif
 
-kernel.img: $(OBJS) $(LIBS)
+bare-metal.img: $(OBJS) $(LIBS)
 	$(LD) -o kernel.elf -Map kernel.map -T $(CIRCLEHOME)/circle.ld $(CIRCLEHOME)/lib/startup.o $(OBJS) $(LIBS)
 	$(PREFIX)objdump -D kernel.elf > bare-metal.lst
 	$(PREFIX)objcopy kernel.elf -O binary bare-metal.img

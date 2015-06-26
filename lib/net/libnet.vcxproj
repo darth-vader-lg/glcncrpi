@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{826B4A91-1B83-4988-8867-76E1585E1EFC}</ProjectGuid>
+    <Keyword>MakeFileProj</Keyword>
+    <ProjectName>libnet</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\vsbuild.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\vsbuild.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <NMakeOutput>libnet.a</NMakeOutput>
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <NMakeOutput>libnet.a</NMakeOutput>
+    <NMakePreprocessorDefinitions>WIN32;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="Makefile" />
+    <None Include="readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="arphandler.cpp" />
+    <ClCompile Include="checksumcalculator.cpp" />
+    <ClCompile Include="dnsclient.cpp" />
+    <ClCompile Include="icmphandler.cpp" />
+    <ClCompile Include="ipaddress.cpp" />
+    <ClCompile Include="linklayer.cpp" />
+    <ClCompile Include="netconfig.cpp" />
+    <ClCompile Include="netconnection.cpp" />
+    <ClCompile Include="netdevlayer.cpp" />
+    <ClCompile Include="netqueue.cpp" />
+    <ClCompile Include="netsubsystem.cpp" />
+    <ClCompile Include="networklayer.cpp" />
+    <ClCompile Include="ntpclient.cpp" />
+    <ClCompile Include="socket.cpp" />
+    <ClCompile Include="transportlayer.cpp" />
+    <ClCompile Include="udpconnection.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\circle\net\arphandler.h" />
+    <ClInclude Include="..\..\include\circle\net\checksumcalculator.h" />
+    <ClInclude Include="..\..\include\circle\net\dnsclient.h" />
+    <ClInclude Include="..\..\include\circle\net\icmphandler.h" />
+    <ClInclude Include="..\..\include\circle\net\in.h" />
+    <ClInclude Include="..\..\include\circle\net\ipaddress.h" />
+    <ClInclude Include="..\..\include\circle\net\linklayer.h" />
+    <ClInclude Include="..\..\include\circle\net\netconfig.h" />
+    <ClInclude Include="..\..\include\circle\net\netconnection.h" />
+    <ClInclude Include="..\..\include\circle\net\netdevlayer.h" />
+    <ClInclude Include="..\..\include\circle\net\netqueue.h" />
+    <ClInclude Include="..\..\include\circle\net\netsubsystem.h" />
+    <ClInclude Include="..\..\include\circle\net\networklayer.h" />
+    <ClInclude Include="..\..\include\circle\net\ntpclient.h" />
+    <ClInclude Include="..\..\include\circle\net\socket.h" />
+    <ClInclude Include="..\..\include\circle\net\transportlayer.h" />
+    <ClInclude Include="..\..\include\circle\net\udpconnection.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
