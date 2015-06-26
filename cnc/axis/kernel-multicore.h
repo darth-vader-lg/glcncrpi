@@ -55,8 +55,7 @@ private:
     CActLED m_ActLED;
     CKernelOptions		m_Options;
     CDeviceNameService	m_DeviceNameService;
-    CScreenDevice		m_Screen;
-//    CSerialDevice		m_Serial;
+    CScreenDevice*		m_Screen;
     CExceptionHandler	m_ExceptionHandler;
     CInterruptSystem	m_Interrupt;
     CTimer			m_Timer;

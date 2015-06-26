@@ -20,12 +20,11 @@
 #include "kernel-multicore.h"
 
 CKernelMulticore::CKernelMulticore (void) :
-    m_Screen (m_Options.GetWidth (), m_Options.GetHeight ()),
+    m_Screen(new CScreenDevice(m_Options.GetWidth (), m_Options.GetHeight ())),
     m_Timer (&m_Interrupt),
     m_Logger (m_Options.GetLogLevel (), &m_Timer),
     m_multicoreTest(&m_Memory)
 {
-    m_ActLED.Blink (5);	// show we are alive
 }
 
 CKernelMulticore::~CKernelMulticore (void)
@@ -35,41 +34,26 @@ CKernelMulticore::~CKernelMulticore (void)
 boolean CKernelMulticore::Initialize (void)
 {
     boolean bOK = TRUE;
-
-    if (bOK)
-    {
-        bOK = m_Screen.Initialize ();
+    if (bOK) {
+        bOK = m_Screen->Initialize ();
+        if (!bOK) {
+           delete m_Screen;
+           m_Screen = new CScreenDevice(640, 480, TRUE);
+           bOK = m_Screen->Initialize();
+        }
     }
-
-//    if (bOK)
-//    {
-//        bOK = m_Serial.Initialize (115200);
-//    }
-
-    if (bOK)
-    {
+    if (bOK) {
         CDevice *pTarget = m_DeviceNameService.GetDevice (m_Options.GetLogDevice (), FALSE);
         if (pTarget == 0)
-        {
-            pTarget = &m_Screen;
-        }
-
+            pTarget = m_Screen;
         bOK = m_Logger.Initialize (pTarget);
     }
-
     if (bOK)
-    {
         bOK = m_Interrupt.Initialize ();
-    }
-
     if (bOK)
-    {
         bOK = m_Timer.Initialize ();
-    }
     if (bOK)
         bOK = m_multicoreTest.Initialize();
-    if (bOK)
-        m_ActLED.Blink(10, 100, 100);
     return bOK;
 }
 
