@@ -30,7 +30,7 @@ OBJS	= dwhcidevice.o dwhciregister.o dwhcixferstagedata.o \
 	  dwhciframeschednsplit.o usbprinter.o
 
 libusb.a: $(OBJS)
-	rm -f libusb.a
+	$(REMOVE) libusb.a
 	$(AR) cr libusb.a $(OBJS)
 
 include $(CIRCLEHOME)/Rules.mk

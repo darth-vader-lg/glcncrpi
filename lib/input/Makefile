@@ -23,7 +23,7 @@ CIRCLEHOME = ../..
 OBJS	= keyboardbehaviour.o keymap.o
 
 libinput.a: $(OBJS)
-	rm -f libinput.a
+	$(REMOVE) libinput.a
 	$(AR) cr libinput.a $(OBJS)
 
 include $(CIRCLEHOME)/Rules.mk

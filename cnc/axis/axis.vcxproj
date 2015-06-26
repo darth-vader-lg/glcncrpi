@@ -52,6 +52,11 @@
   <ItemGroup>
     <ProjectReference Include="..\..\lib\libcircle.vcxproj">
       <Project>{c74f1928-a471-467a-9f88-aa3b6ffc3a71}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -27,7 +27,7 @@ OBJS	= netsubsystem.o socket.o \
 	  dnsclient.o ntpclient.o
 
 libnet.a: $(OBJS)
-	rm -f libnet.a
+	$(REMOVE) libnet.a
 	$(AR) cr libnet.a $(OBJS)
 
 include $(CIRCLEHOME)/Rules.mk
