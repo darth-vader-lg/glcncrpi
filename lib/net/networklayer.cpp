@@ -123,7 +123,16 @@ void CNetworkLayer::Process (void)
 		CIPAddress IPAddressDestination (pHeader->DestinationAddress);
 		if (*pOwnIPAddress != IPAddressDestination)
 		{
-			continue;
+			// Test if the address doesn't belong on the same network
+			if (!pOwnIPAddress->OnSameNetwork (IPAddressDestination, m_pNetConfig->GetNetMask ()))
+			{
+				continue;
+			}
+			// Test if it's not a broadcast packet (accepted)
+			if (IPAddressDestination.Get ()[3] != 255)
+			{
+				continue;
+			}
 		}
 
 		if (   (pHeader->nFlagsFragmentOffset & IP_FLAGS_MF)

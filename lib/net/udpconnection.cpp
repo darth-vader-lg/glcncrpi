@@ -145,8 +145,12 @@ void CUDPConnection::Process (void)
 
 int CUDPConnection::PacketReceived (const void *pPacket, unsigned nLength, CIPAddress &rSenderIP, int nProtocol)
 {
-	if (   nProtocol   != IPPROTO_UDP
-	    || m_ForeignIP != rSenderIP)
+	if (nProtocol != IPPROTO_UDP)
+	{
+		return 0;
+	}
+	boolean bFromAnyAddress = m_ForeignIP == CIPAddress::AnyAddress;
+	if (!bFromAnyAddress && m_ForeignIP != rSenderIP)
 	{
 		return 0;
 	}
@@ -158,7 +162,7 @@ int CUDPConnection::PacketReceived (const void *pPacket, unsigned nLength, CIPAd
 	TUDPHeader *pHeader = (TUDPHeader *) pPacket;
 
 	if (   m_nOwnPort     != le2be16 (pHeader->nDestPort)
-	    || m_nForeignPort != le2be16 (pHeader->nSourcePort))
+	    || (m_nForeignPort != 0 && m_nForeignPort != le2be16 (pHeader->nSourcePort)))
 	{
 		return 0;
 	}
@@ -168,8 +172,11 @@ int CUDPConnection::PacketReceived (const void *pPacket, unsigned nLength, CIPAd
 		return -1;
 	}
 	
+	// If the packet is accepted from any address we cannot calculate the checksum because at this level
+	// we don't know anymore where the packet come from. To be fixed!!!
+	u16 checksum = bFromAnyAddress ? CHECKSUM_OK: m_Checksum.Calculate(pPacket, nLength);
 	if (   pHeader->nChecksum != UDP_CHECKSUM_NONE
-	    && m_Checksum.Calculate (pPacket, nLength) != CHECKSUM_OK)
+	    && checksum != CHECKSUM_OK)
 	{
 		return -1;
 	}

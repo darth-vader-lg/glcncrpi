@@ -51,6 +51,9 @@ public:
 	
 	boolean OnSameNetwork (const CIPAddress &rAddress2, const u8 *pNetMask) const;
 
+public:
+	static const CIPAddress AnyAddress;
+
 private:
 	boolean m_bValid;
 

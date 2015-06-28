@@ -21,6 +21,8 @@
 #include <circle/util.h>
 #include <assert.h>
 
+const CIPAddress CIPAddress::AnyAddress((u32)0);
+
 CIPAddress::CIPAddress (void)
 :	m_bValid (FALSE)
 {
