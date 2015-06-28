@@ -11,8 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{71C80C25-7F2B-47A5-A11F-D82F56B3E268}</ProjectGuid>
+    <ProjectGuid>{C17F2DC0-9793-4216-A8D0-31CDA2D80151}</ProjectGuid>
     <Keyword>MakeFileProj</Keyword>
+    <ProjectName>libcnc</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -36,11 +37,11 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <NMakeOutput>axis.exe</NMakeOutput>
+    <NMakeOutput>libcnc.a</NMakeOutput>
     <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <NMakeOutput>axis.exe</NMakeOutput>
+    <NMakeOutput>libnetcnc.a</NMakeOutput>
     <NMakePreprocessorDefinitions>WIN32;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
   </PropertyGroup>
   <ItemDefinitionGroup>
@@ -48,37 +49,6 @@
   <ItemGroup>
     <None Include="Makefile" />
     <None Include="readme.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\lib\libcircle.vcxproj">
-      <Project>{c74f1928-a471-467a-9f88-aa3b6ffc3a71}</Project>
-      <Private>false</Private>
-      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
-      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
-      <LinkLibraryDependencies>true</LinkLibraryDependencies>
-      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
-    </ProjectReference>
-    <ProjectReference Include="..\cnc\libcnc.vcxproj">
-      <Project>{c17f2dc0-9793-4216-a8d0-31cda2d80151}</Project>
-      <Private>false</Private>
-      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
-      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
-      <LinkLibraryDependencies>true</LinkLibraryDependencies>
-      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="cmulticoreledtest.h" />
-    <ClInclude Include="encoder.h" />
-    <ClInclude Include="kernel-multicore.h" />
-    <ClInclude Include="kernel.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="cmulticoreledtest.cpp" />
-    <ClCompile Include="encoder.cpp" />
-    <ClCompile Include="kernel-multicore.cpp" />
-    <ClCompile Include="kernel.cpp" />
-    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
