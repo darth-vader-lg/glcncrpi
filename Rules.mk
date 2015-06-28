@@ -45,6 +45,9 @@ CFLAGS	+= $(ARCH) -Wall -Wno-psabi -fsigned-char -fno-builtin -nostdinc -nostdli
 	   -undef -D__circle__ -DRASPPI=$(RASPPI) -I $(CIRCLEHOME)/include -I $(CIRCLEHOME)/addon -O #-DNDEBUG
 CPPFLAGS+= $(CFLAGS) -fno-exceptions -fno-rtti -std=c++0x
 
+# Uncomment this line to show mixed assembler and source code
+LSTFLAGS = #-Wa,-adhln -g 
+
 %.o: %.S
 	$(AS) $(AFLAGS) -c -o $@ $<
 
@@ -52,7 +55,7 @@ CPPFLAGS+= $(CFLAGS) -fno-exceptions -fno-rtti -std=c++0x
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 %.o: %.cpp
-	$(CPP) $(CPPFLAGS) -c -o $@ $<
+	$(CPP) $(CPPFLAGS) $(LSTFLAGS) -c -o $@ $<
 
 clean:
 	$(REMOVE) *.o *.a *.elf *.lst *.img *.cir *.map *~ $(EXTRACLEAN)
